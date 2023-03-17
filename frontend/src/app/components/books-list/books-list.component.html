@@ -4,7 +4,12 @@
     <mat-card-content>
       <mat-nav-list *ngIf="(books$ | async) as books">
         <a mat-list-item *ngFor="let book of books.content" [routerLink]="['/books', book.id]">
-          {{book.title}}
+          <span matListItemTitle>{{book.title}}</span>
+          <span matListItemLine>{{book.author}}</span>
+          <span matListItemMeta>
+            <div>  Year: {{book.year}} </div>
+            <div> Genre: {{book.genre}} </div>
+          </span>
         </a>
       </mat-nav-list>
     </mat-card-content>
